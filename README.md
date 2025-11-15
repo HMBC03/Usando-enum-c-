@@ -85,19 +85,20 @@ public enum Genero
 ```
 
 **En la Base de Datos:**
-```
-+----+---------+-----------+--------+
-| Id | Nombre  | Apellido  | Genero |
-+----+---------+-----------+--------+
-| 1  | Juan    | Pérez     | 0      |
-| 2  | María   | Gómez     | 1      |
-+----+---------+-----------+--------+
+```<img width="280" height="138" alt="image" src="https://github.com/user-attachments/assets/217ea567-58eb-4beb-8bb2-1ab9c81a01b0" />
+
 ```
 
 **En el código C#:**
 ```csharp
+//mostrar por la consola los registros
 var paciente = db.Pacientes.Find(1);
 Console.WriteLine(paciente.Genero); // Output: Masculino
+
+foreach (var p in db.Pacientes)
+{
+    Console.WriteLine($"{p.Id} - {p.Nombre} - {p.Genero}");
+}
 ```
 
 ### ✨ La "magia" de Entity Framework
@@ -106,6 +107,8 @@ Console.WriteLine(paciente.Genero); // Output: Masculino
 
 - **Al guardar**: Convierte `Genero.Masculino` → `0` en la BD
 - **Al leer**: Convierte `0` en la BD → `Genero.Masculino` en C#
+<img width="234" height="95" alt="image" src="https://github.com/user-attachments/assets/8813912f-ac21-4a2d-ac89-d609f5c5bb47" />
+
 
 ### 📝 Conversión opcional a String
 
