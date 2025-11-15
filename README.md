@@ -1,4 +1,4 @@
-# Usando Enum en C# con Entity Framework 🔢
+# Usando Enum en C# con Entity Framework 
 
 Ejemplo simple y práctico para la implementación de datos seguros usando enumeraciones (enum) en C# con Entity Framework Core y MySQL.
 
@@ -85,16 +85,17 @@ public enum Genero
 ```
 
 **En la Base de Datos:**
-```<img width="280" height="138" alt="image" src="https://github.com/user-attachments/assets/217ea567-58eb-4beb-8bb2-1ab9c81a01b0" />
 
-```
+<img width="360" height="167" alt="image" src="https://github.com/user-attachments/assets/20765a52-5eaf-4748-99e1-00ffa160e89b" />
+
+
 
 **En el código C#:**
 ```csharp
 //mostrar por la consola los registros
 var paciente = db.Pacientes.Find(1);
 Console.WriteLine(paciente.Genero); // Output: Masculino
-
+//En el program se listan todos los registros
 foreach (var p in db.Pacientes)
 {
     Console.WriteLine($"{p.Id} - {p.Nombre} - {p.Genero}");
@@ -436,18 +437,6 @@ Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE.txt](LICENSE.t
 ## 👨‍💻 Autor
 
 **HMBC03**
-
----
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Haz fork del proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
 
 ---
 
