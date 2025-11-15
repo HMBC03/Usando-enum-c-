@@ -8,7 +8,7 @@ class Program
     {
         using var db = new AppDbContext();
 
-        db.Database.EnsureDeleted();
+        db.Database.EnsureDeleted();//elimino y creo para la prueba
         db.Database.EnsureCreated();
 
           var pacientes = new List<Paciente>
@@ -20,9 +20,10 @@ class Program
                 new Paciente { Nombre = "Alex",   Apellido = "Lozano",   Genero = Genero.Masculino }
             };
 
-        db.Pacientes.AddRange(pacientes);
-        db.SaveChanges();
+        db.Pacientes.AddRange(pacientes);//Guarda la lista 
+        db.SaveChanges();//guarda
 
+        //mostrar por la consola los registros
         foreach (var p in db.Pacientes)
         {
             Console.WriteLine($"{p.Id} - {p.Nombre} - {p.Genero}");

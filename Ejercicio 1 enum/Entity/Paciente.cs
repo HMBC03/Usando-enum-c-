@@ -7,6 +7,6 @@ namespace Ejercicio_1_enum.Entity
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public Genero Genero { get; set; }
+        public Genero Genero { get; set; } //se deja tipo genero que es un enum 
     }
 }

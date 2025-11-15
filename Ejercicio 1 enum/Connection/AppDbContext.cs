@@ -11,22 +11,22 @@ namespace Ejercicio_1_enum.Connection
         {
             base.OnModelCreating(modelBuilder);
 
-            // Si usas enum → int (por defecto)
+            //aqui gardamos el enum y EF lo guarda como int por defecto
             modelBuilder.Entity<Paciente>()
                 .Property(p => p.Genero);
-            //     .HasConversion<int>();
 
-            // Si quieres guardar enum como string
+
+            // Para el segundo ejemplo se puede guardar como string
             // modelBuilder.Entity<Paciente>()
             //     .Property(p => p.Genero)
-            //     .HasConversion<string>();
+            //     .HasConversion<string>(); aca le dice que lo quiere guardar como string
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Cambia los valores según tu entorno
             var connectionString =
-                "server=localhost;port=3306;database=ejemplo1;user=root;password=root;";
+                "server=localhost;port=3306;database=ejemplo1;user=root;password=root;"; //la conexion de toda la vida
 
             optionsBuilder.UseMySql(
                 connectionString,
