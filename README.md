@@ -16,9 +16,9 @@ Ejemplo simple y práctico para la implementación de datos seguros usando enume
 
 ---
 
-## 🎯 ¿Qué son los Enums?
+## ¿Qué son los Enums?
 
-Los **enumeradores (enum)** son un tipo de dato especial en C# que permite definir un conjunto de constantes con nombre. En lugar de usar números "mágicos" o strings que pueden tener errores tipográficos, los enums proporcionan una forma segura y legible de representar valores fijos.
+Los **enumeradores (enum)** son un tipo de dato especial en C# que permite definir un conjunto de constantes con nombre. En lugar de usar números aleatorios o strings que pueden tener errores tipográficos, los enums proporcionan una forma segura y legible de representar valores fijos.
 
 ### Ejemplo básico:
 ```csharp
@@ -70,9 +70,9 @@ Ejercicio 1 enum/
 
 ---
 
-## 🔄 Cómo funcionan los Enums con Entity Framework
+## Cómo funcionan los Enums con Entity Framework
 
-### ⚡ Comportamiento por defecto (como Integer)
+### Comportamiento por defecto (como Integer)
 
 **Entity Framework guarda los enums como enteros en la base de datos** sin necesidad de configuración adicional:
 
@@ -102,7 +102,7 @@ foreach (var p in db.Pacientes)
 }
 ```
 
-### ✨ La "magia" de Entity Framework
+### Ventajas de Entity Framework
 
 **No necesitas parsear nada**. EF Core hace la conversión automáticamente:
 
@@ -181,7 +181,7 @@ O añadir al archivo `.csproj`:
 Edita la cadena de conexión en `AppDbContext.cs`:
 
 ```csharp
-var connectionString = "server=localhost;port=3306;database=ejemplo1;user=root;password=root;";
+var connectionString = "server=localhost;port=3306;database=ejemplo1;user=root;password=aquituclave;";
 ```
 
 **Ajusta estos valores según tu configuración:**
