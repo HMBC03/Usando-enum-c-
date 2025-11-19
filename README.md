@@ -29,18 +29,17 @@ public enum Genero
 }
 ```
 
-Por defecto, los enums son números enteros que comienzan desde 0.
+Por defecto, los enums son números enteros (int) que comienzan desde 0.
 
 ---
 
 ## ✅ Ventajas de usar Enums
 
-1. **Seguridad de tipos**: El compilador previene valores inválidos
-2. **Legibilidad del código**: `Genero.Masculino` es más claro que `0`
-3. **IntelliSense**: Autocompletado en el IDE con todas las opciones disponibles
-4. **Refactorización fácil**: Cambiar valores en un solo lugar
-5. **Menos errores**: No hay typos en strings ni números incorrectos
-6. **Rendimiento**: Más eficiente que strings en memoria y comparaciones
+1. **Seguridad de tipos**: El compilador previene valores inválidos (lo que obliga a parsear los datos)
+2. **Legibilidad del código**: `Genero.Masculino` es más claro que `0` lo mismo que `Genero.value` (Como defina la lógica)
+3. **Refactorización fácil**: Cambiar valores en un solo lugar, (Permite ajustar los valores, aunque sean constantes, si manejas un estado y lo necesitas agregar, puede añadirlo, en lugar de crear una entidad)
+4. **Menos errores**: No hay typos en strings ni números incorrectos
+5. **Rendimiento**: Más eficiente que strings en memoria y comparaciones `if (Genero.value=="Masculino")` o parseando datos
 
 ---
 
@@ -50,13 +49,13 @@ Por defecto, los enums son números enteros que comienzan desde 0.
 Ejercicio 1 enum/
 │
 ├── Connection/
-│   └── AppDbContext.cs          # Contexto de Entity Framework
+│   └── AppDbContext.cs          # Cotenxt y Conexión Mysql de Entity Framework
 │
 ├── Entity/
-│   └── Paciente.cs               # Modelo de datos
+│   └── Paciente.cs               # Modelo de datos sencillo
 │
 ├── Enum/
-│   └── Genero.cs                 # Definición del enum
+│   └── Genero.cs                 # Definición del enum en este caso genero puede ser lo que la lógica requiera abajo encontrara mas detalles
 │
 └── Program.cs                    # Punto de entrada de la aplicación
 ```
@@ -64,9 +63,9 @@ Ejercicio 1 enum/
 ### Descripción de archivos:
 
 - **`Genero.cs`**: Define el enum con los valores posibles
-- **`Paciente.cs`**: Entidad que usa el enum como propiedad
+- **`Paciente.cs`**: Entidad que usa el enum como propiedad (Definimos una propiedad de tipo Genero (un enum))
 - **`AppDbContext.cs`**: Configuración de EF Core y conexión a MySQL
-- **`Program.cs`**: Lógica principal con ejemplos de uso
+- **`Program.cs`**: Lógica principal con el ejemplo
 
 ---
 
@@ -82,10 +81,11 @@ public enum Genero
     Masculino,  // Se guarda como 0 en BD
     Femenino    // Se guarda como 1 en BD
 }
+
 ```
 
 **En la Base de Datos:**
-
+Esto mejora el tiempo en consulta, es mas versatil y aunque la lectura de la BD es abstracta, la eficiencia permite crecer el sistema y gestionar una mejor lógica.
 <img width="360" height="167" alt="image" src="https://github.com/user-attachments/assets/20765a52-5eaf-4748-99e1-00ffa160e89b" />
 
 
