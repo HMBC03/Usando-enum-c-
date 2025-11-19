@@ -86,6 +86,8 @@ public enum Genero
 
 **En la Base de Datos:**
 Esto mejora el tiempo en consulta, es mas versatil y aunque la lectura de la BD es abstracta, la eficiencia permite crecer el sistema y gestionar una mejor lógica.
+
+
 <img width="360" height="167" alt="image" src="https://github.com/user-attachments/assets/20765a52-5eaf-4748-99e1-00ffa160e89b" />
 
 
